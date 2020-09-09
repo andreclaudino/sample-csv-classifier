@@ -19,6 +19,4 @@ This model uses transfer learning for text encoding, you should download (or ref
 * `--label-column`: Name of csv column with integer numeric labels
 
 
-You can see more about this model in this youtube video
-
-[Video](https://www.youtube.com/watch?v=WnSMfhjtVo0]
+You can see more about this model in [this youtube video](https://www.youtube.com/watch?v=WnSMfhjtVo0)
