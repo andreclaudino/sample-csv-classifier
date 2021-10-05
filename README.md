@@ -8,6 +8,7 @@ This model uses transfer learning for text encoding, you should download (or ref
 
 ## Parameters:
 
+* `--dataset-path`: Path to CSV source dataset
 * `--epochs`: number of training epochs
 * `--encoder-uri`: Uri or path for encoder saved_model folder
 * `--layer-sizes`: comma separated list of integers, each integer is the number of neurons in that label
