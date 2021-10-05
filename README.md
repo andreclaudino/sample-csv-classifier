@@ -8,6 +8,8 @@ This model uses transfer learning for text encoding, you should download (or ref
 
 ## Parameters:
 
+The startup command is `train-classifier`.
+
 * `--dataset-path`: Path to CSV source dataset
 * `--epochs`: number of training epochs
 * `--encoder-uri`: Uri or path for encoder saved_model folder
