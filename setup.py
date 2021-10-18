@@ -10,9 +10,10 @@ setup(
     author_email='',
     description='',
     install_requires=[
-        "tensorflow==2.1.0",
+        "tensorflow>=2.6.0",
         "click==7.1.2",
-        "tensorflow-hub==0.9.0"
+        "tensorflow-hub==0.9.0",
+        "tensorflow_text>=2.0.0rc0"
     ],
     entry_points={
         'console_scripts': [

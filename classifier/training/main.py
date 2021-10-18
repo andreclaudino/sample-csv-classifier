@@ -3,6 +3,7 @@ import click
 from classifier.models.classifier_model import ClassifierModel
 from classifier.persistense.microdata import load_microdata
 import tensorflow_hub as hub
+import tensorflow_text
 
 from classifier.training.loop import training_loop
 

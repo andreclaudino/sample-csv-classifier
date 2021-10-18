@@ -25,12 +25,12 @@ def training_loop(encoder, model: ClassifierModel, learning_rate: float, train_d
         for step, (batch_dict, label_indices) in enumerate(train_dataset):
 
             batch = batch_dict[feature_column]
-            label = tf.one_hot(label_indices, model.number_of_classes())
+            label = tf.one_hot(tf.cast(label_indices, tf.int32), model.number_of_classes())
 
             encoded_batch = encoder(batch)
             loss, accuracy = train_step(model, optimizer, encoded_batch, label)
 
-            if step % CHECKPOINT_STEP == 0:
+            if step % CHECKPOINT_STEP == 0 and step != 0:
                 write_metrics(step, loss, accuracy, metrics_file_path)
                 save_checkpoint(checkpoint_manager, checkpointer, loss, step)
 

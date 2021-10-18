@@ -1,4 +1,5 @@
 import os
+import sys
 
 import tensorflow as tf
 
@@ -33,6 +34,7 @@ def accuracy_function(real, predicted):
 
 def write_metrics(step, loss, accuracy, save_file):
     tf.print(f"{step},{loss},{accuracy}", output_stream=f"file://{save_file}")
+    tf.print(f"{step},{loss},{accuracy}")
 
 
 def save_checkpoint(checkpoint_manager, checkpoint_factory, loss, step):

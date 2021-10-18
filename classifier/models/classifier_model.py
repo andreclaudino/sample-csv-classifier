@@ -2,7 +2,7 @@ from typing import List
 
 import tensorflow as tf
 
-from classifier.models.utils import create_dense
+from classifier.models.utils import create_dense, create_output
 
 
 class ClassifierModel(tf.Module):
@@ -20,8 +20,9 @@ class ClassifierModel(tf.Module):
         return self._block(input_vector, training=training)
 
     def _create_inner_block(self) -> tf.keras.Model:
-        layers = [create_dense(size) for size in self._layer_sizes + [self._number_of_classes]]
-        block = tf.keras.models.Sequential(layers)
+        layers = [create_dense(size) for size in self._layer_sizes]
+        output_layer = create_output(self._number_of_classes)
+        block = tf.keras.models.Sequential(layers + [output_layer])
         block.build(input_shape=(None, self._number_of_features))
 
         return block
